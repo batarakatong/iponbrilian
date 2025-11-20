@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary-50: #e6f4ff;
+    --primary-600: #0f9bd7;
+    --primary-700: #0c7cb9;
+}
+
+body {
+    background-color: #f8fafc;
+    background-image:
+        radial-gradient(circle at 1px 1px, rgba(15, 155, 215, 0.15) 1px, transparent 0),
+        radial-gradient(circle at 20px 20px, rgba(15, 155, 215, 0.12) 1px, transparent 0);
+    background-size: 28px 28px;
+}
+
+@layer components {
+    .card {
+        @apply bg-white/90 border border-slate-100 rounded-2xl p-6 shadow-sm;
+    }
+
+    .btn-primary {
+        @apply inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white shadow-sm transition duration-150;
+        background-color: var(--primary-600);
+    }
+
+    .btn-primary:hover {
+        background-color: var(--primary-700);
+    }
+
+    .btn-secondary {
+        @apply inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-slate-800 border border-slate-200 bg-white transition duration-150 hover:bg-slate-50;
+    }
+
+    .btn-danger {
+        @apply inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-white shadow-sm transition duration-150;
+        background-color: #ef4444;
+    }
+
+    .btn-danger:hover {
+        background-color: #dc2626;
+    }
+
+    .badge {
+        @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold;
+        background-color: var(--primary-50);
+        color: var(--primary-700);
+    }
+
+    .alert-success {
+        @apply rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-green-700 text-sm;
+    }
+}
+
+.text-primary-600 { color: var(--primary-600); }
+.text-primary-700 { color: var(--primary-700); }
+.bg-primary-50 { background-color: var(--primary-50); }
